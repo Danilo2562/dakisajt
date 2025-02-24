@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: auto;
+    height: 100vh;
+    background: #0F2043;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.popup{
+    width: 320px;
+    height: 200px;
+    background: #fff;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    
+    left: 50%;
+    /*right: 10%;
+    /*right: 0.2rem;*/
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    /*padding-left: 4rem;*/
+    padding: 0 5rem 2rem;
+    color: #333;
+    box-shadow: 5px 5px 10px 10px #E8AF30;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    /*transition: transform 0.4s, top 0.4s;*/
+    
+
+}
+.popup img{
+    position: absolute;
+    background-color: white;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+    width: 8rem;
+    height: 8rem;
+    /*width: 8rem;
+    height: 8rem;*/
+    margin-top: -75px;
+    /*left:135px;*/
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.popup h2{
+    top:65px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+    width: fit-content;
+    /*padding-right: 200px;*/
+    /*margin-right: 100;*/
+    /*position: relative;*/
+    font-size: 32px;
+    font-weight: 500;
+    /*margin: 20px 0 10px;*/
+    white-space: nowrap;
+}
+.popup p{
+    /*text-align: left;*/
+    right: 15px;
+    left: 15px;
+    margin-inline: auto;
+    /*width: fit-content;*/
+    text-align: left;
+    position: absolute;
+    top:110px;
+    /*left: 80px;
+    right: 50px;*/
+}
+
+.open-popup{
+    position: absolute;
+    width: 320px;
+    /*transition: transform 0.4s, top 0.4s;*/
+    visibility: visible;
+    top: 50%;
+    
+    transform: translate(-50%,-50%) scale(1);
+    transition: all 0.4s ease-in-out;
+    /*transition: transform 0.4s, top 0.4s;*/
+    
+}
+.brojanje h2{
+    
+    /*margin-left: 30px;*/
+    font-size: 50px;
+}
+.brojc1{
+    position: absolute;
+    
+    
+    left: 15%;
+    top: 20px;
+    
+    /*margin-left:30px;*/
+    /*padding-left: 30px;*/
+}
+.brojc2{
+
+    position:absolute;
+    
+    
+    left: 35%;
+    top: 20px;
+    
+    /*padding-left: 30px;*/
+}
+.brojc3{
+    position: absolute;
+    
+    
+    left: 55%;
+    top: 20px;
+    
+    /*padding-left: 30px;*/
+    
+}
+.brojc4{
+
+    position: absolute;
+    
+    
+    left:75%;
+    top:20px;
+    
+    /*padding-left: 30px;*/
+    
+}
+.tekst{
+    font-family: "Sriracha";
+    font-size: 32px;
+    color:#DC7A2F;
+}
+
+.dd1{
+    color: #E8AF30;
+}
+.container1{
+    border-radius: 10px;
+    position: absolute;
+    justify-content: center;
+    justify-items:center;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    
+    width: 350px;
+    height: 90px;
+    background-color: wheat;
+}
+.sriracha-regular {
+    font-family: "Sriracha", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+@media (max-width:440px)
+{
+    .tekst{
+        font-size: 27px;
+    }
+    
+}
