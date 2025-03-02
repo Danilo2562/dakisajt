@@ -41,6 +41,7 @@
 .popup img{
     position: absolute;
     background-color: white;
+    color: white;
     right: 0;
     left: 0;
     margin-inline: auto;
