@@ -18,7 +18,8 @@
 .popup{
     width: 320px;
     height: 200px;
-    background: #fff;
+    /*background: #fff;*/
+    background: #019CA0;
     border-radius: 30px;
     position: absolute;
     top: 0;
