@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "style.css">
+    <title>Rodjendanski sajt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+
+    </div>
+    <div class = "container">
+       <div class="brojanje">
+        <h1 id = "t" class="tekst">Vreme do Predivnog rodjendana</h1>
+        <div id = "c1" class="container1">
+          <!--<h3 id="d" class="dan">dana</h3>-->
+          <h2 id="broj1" class="brojc1"><span class="dd1">23</span></h2>
+          <!--<h3 id="s" class="sat">sati</h3>-->
+          <h2 id="broj2" class="brojc2">59</h2>
+          <!--<h3 id="m" class="minut">minuta</h3>-->
+          <h2 id="broj3" class="brojc3">12</h2>
+          <!--<h3 id="se" class = "sekunda">sekundi</h3>-->
+          <h2 id="broj4" class="brojc4">10</h2>
+        </div>
+        
+       </div>
+        <div class = "popup" id = "popup">
+            <img src="slika.png">
+            <h2>Srecan rođendan!</h2>
+            <p>Srecan rodjendan Katarina.Neka ti se sve zelje u zivotu ispune.Da nam ostanes tako divna kao do sad.Sve najlepse u zivotu zeli ti Danilo</p>
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+        
+        
+
+        const second = 1000
+        const minute = 60 * second
+        const hour = 60 * minute
+        const day = 24 * hour
+
+        //let as1 = document.getElementById("d");
+        //let as2 = document.getElementById("s");
+
+        let aab = document.getElementById("c1");
+        let t = document.getElementById("t");
+
+        //let as4 = document.getElementById("se");
+
+        function formatiraj(broj12,tip)
+        {
+            if(broj12 < 10)
+            {
+               return '0' + broj12;
+            }
+              
+            /*
+              if(((broj12 >= 1 && broj12 < 5) || broj12 == 0) && tip=='sat')
+              {
+                  as2.innerText = "sata"
+              }
+              if(broj12==1 && tip=='sat')
+              {
+                as2.innerText = "sat";
+              }
+              if(broj12 > 5 && tip == 'sat')
+              {
+                as2.innerText = "sati"
+              }
+
+              if(tip == "sekund")
+              {
+                  if(broj12%10 >= 1 && broj12%10 < 5)
+                  {
+                      as4.innerText = "sekunde"
+                  }
+              }
+                  */
+
+            return broj12;
+        }
+	
+	/*	
+        function format1(broj123,tip)
+        {
+            if(tip == "sekund")
+            {
+              if(broj123%10 >= 1 && broj123%10 < 5)
+              {
+                //alert("Aki kralj");
+                  as4.innerText = "sekunde"
+              }
+              if(broj123%10 > 5)
+              {
+                as4.innerText = "sekundi";
+              }
+            }
+        }
+	*/
+        let d = new Date();
+        
+        const rodj = new Date('3/3/2025').getTime();
+        
+
+        //let time = d.getTime();
+        let popup = document.getElementById("popup");
+        let broj = document.getElementById("broj1");
+        let broj1 = document.getElementById("broj2");
+        let broj2 = document.getElementById("broj3");
+        let broj3 = document.getElementById("broj4");
+        //let brojj = document.getElementById("12");
+
+        //var muzika = new Audio('muzika.mp3');
+        var muzika = new Audio('muzika.mp3');
+        //muzika.play();
+        const interval = setInterval(function() {
+          
+          //muzika.play();
+          let d1 = new Date();
+          let d2 = new Date().getTime();
+          let razdaljina = rodj - d2;
+          broj.innerText = formatiraj(Math.floor(razdaljina / day),"dan") + ":";
+          broj1.innerText = formatiraj(Math.floor((razdaljina % day) / hour),"sat") + ":";
+          broj2.innerText = formatiraj(Math.floor((razdaljina%hour)/minute),"minut") + ":";
+          broj3.innerText = formatiraj(Math.floor((razdaljina%minute)/second),"sekund");
+          //format1(Math.floor((razdaljina%minute)/second),"sekund");
+          
+          if(razdaljina <= 0)
+          {
+            muzika.play();
+            //music.play();
+            t.remove();
+            aab.remove();
+            
+            popup.classList.add("open-popup");
+            
+            const defaults = {
+  spread: 360,
+  ticks: 100,
+  gravity: 0,
+  decay: 0.94,
+  startVelocity: 30,
+  shapes: ["heart"],
+  colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
+};
+
+confetti({
+  ...defaults,
+  particleCount: 50,
+  scalar: 2,
+});
+
+confetti({
+  ...defaults,
+  particleCount: 25,
+  scalar: 3,
+});
+
+confetti({
+  ...defaults,
+  particleCount: 10,
+  scalar: 4,
+});
+clearInterval(interval);
+
+
+
+          }
+          
+          
+        },1000);
+             
+        //muzika.play();
+        window.onload = function(){
+          //var muzika = new Audio('muzika.mp3');
+
+          //muzika.play();
+          let d1 = new Date();
+          let d2 = new Date().getTime();
+          let razdaljina = rodj - d2;
+          broj.innerText = formatiraj(Math.floor(razdaljina / day)) + ":";
+          broj1.innerText = formatiraj(Math.floor((razdaljina % day) / hour)) + ":";
+          broj2.innerText = formatiraj(Math.floor((razdaljina%hour)/minute)) + ":";
+          broj3.innerText = formatiraj(Math.floor((razdaljina%minute)/second));
+            if(d.getMinutes() == 21){
+                
+            
+            popup.classList.add("open-popup");
+            const defaults = {
+  spread: 360,
+  ticks: 100,
+  gravity: 0,
+  decay: 0.94,
+  startVelocity: 30,
+  shapes: ["heart"],
+  colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
+};
+
+confetti({
+  ...defaults,
+  particleCount: 50,
+  scalar: 2,
+});
+
+confetti({
+  ...defaults,
+  particleCount: 25,
+  scalar: 3,
+});
+
+confetti({
+  ...defaults,
+  particleCount: 10,
+  scalar: 4,
+});
+        }
+        
+        }
+        
+    </script>
+    <script>
+      //var muzika = new Audio('muzika.mp3');
+
+      //muzika.play();
+    </script>
+</body>
+</html>
